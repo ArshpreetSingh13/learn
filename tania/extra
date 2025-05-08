@@ -1,0 +1,21 @@
+ <div class="card d-flex   align-item-center  justify-content-center " style="width: 15rem;">
+            <img src="https://static.vecteezy.com/system/resources/previews/013/042/571/non_2x/default-avatar-profile-icon-social-media-user-photo-in-flat-style-vector.jpg" class="w-50" alt="...">
+
+            <h5 class="card-title w-25 ">Total Courses</h5>
+
+            <?php
+
+
+            include("config.php");
+            $query = "SELECT count(*) as total from `course_category`";
+            $result = mysqli_query($db, $query);
+            $data = mysqli_fetch_assoc($result);
+            ?>
+
+            <a href="#" class="btn btn-primary m-2">
+                <?php
+                echo $data["total"];
+                ?>
+            </a>
+
+        </div>
